@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Planilha de Gastos</title>
+</head>
+<body>
+    <h1 id="title">Planilha</h1>
+    <div class="container">
+        <div class="expenses">
+    <h1>Gastos</h1>
+
+    <div id="incomeContainer">
+        <span id="incomeValue"></span>
+        <button onclick="editIncome()"><i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
+
+    <form id="incomeForm" style="display: none;">
+        <label for="income">Renda: </label>
+        <input type="number" id="income" required>
+        <button type="button" onclick="addIncome()">Adicionar Renda</button>
+    </form>
+    
+
+    <form id="expenseForm">
+        <label for="description">Descrição: </label>
+        <input type="text" id="description" required>
+
+        <label for="amount">Valor: </label>
+        <input type="number" id="amount" required>
+        <button type="button" onclick="addExpense()">Adicionar Gasto</button>
+    </form>
+
+    <table id="expenseTable">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Ações</th>
+                <th>Data e Hora</th>
+            </tr>
+        </thead>
+                <tbody id="expenseList">
+        </tbody>
+    </table>
+
+    <div id="balance">
+        <h2>Saldo:</h2>
+        <span id="balanceAmount">R$ 0.00</span>
+    </div>
+
+    <button onclick="saveToFile()"><i class="fa-solid fa-download"></i></button>
+    <button onclick="loadFromFile()"><i class="fa-solid fa-upload"></i></button>
+    <button onclick="clearAll()">Limpar Tudo</button>
+
+    <div>
+        <label for="monthFilter">Filtrar por Mês: </label>
+        <select id="monthFilter" onchange="filterByMonth()">
+            <option value="0">Todos</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+        </select>
+        <button onclick="clearMonthFilter()">Limpar Filtro</button>
+    </div>
+</div>
+<div class="creditcard">
+    <h1>Cartões de crédito</h1>
+     <div id="creditCardModal" class="modal">
+         <span class="close" onclick="closeCreditCardModal()">&times;</span>
+         <label for="bank">Banco: </label>
+         <select id="bank" required>
+             <option value="Nubank">Nubank</option>
+             <option value="Santander">Santander</option>
+             <option value="Digio">Digio</option>
+             <option value="C6 Bank">C6 Bank</option>
+             <option value="Rappi">Rappi Bank</option>
+             <option value="PicPay">PicPay</option>
+             <option value="Luiza">Magazine Luiza</option>
+         </select>
+ 
+         <label for="limit">Limite: </label>
+         <input type="number" id="limit" required>
+ 
+         <label for="currentExpense">Gasto Atual: </label>
+         <input type="number" id="currentExpense" required>
+ 
+         <button onclick="addCreditCard()"><i class="fa-solid fa-plus fa-lg"></i></button>
+     </div>
+ 
+     <div id="creditCardContainer">
+     </div>
+     <div class="total">
+     <div id="totalCreditLimit">
+    </div>
+    <div class="btnadd">
+    <button id="addcard" onclick="openCreditCardModal()"><i class="fa-solid fa-plus fa-lg"></i></button>
+    </div>
+</div>
+    
+ 
+    </div>
+</div>
+<footer>Em desenvolvimento</footer>
+    <script src="main.js"></script>
+</body>
+</html>

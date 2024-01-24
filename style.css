@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1c1e;
+    color: white;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.004) !important;
+}
+
+#title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+#expenseForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#expenseForm button {
+    display: flex;
+}
+
+.container {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.expenses {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #2C2C2E;
+    padding: 25px;
+    border-radius: 24px;
+    max-height: 80%;
+    max-width: 50%;
+}
+
+.creditcard {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #2C2C2E;
+    padding: 25px;
+    border-radius: 24px;
+    max-height: 80%;
+    max-width: 50%;
+}
+
+#card img {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#card button {
+    color: #ffffffc5;
+    position: absolute;
+    transform: translate(-30px, 5px);
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #ff00005b;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: 0.5s ease;
+}
+
+#card button:hover {
+    color: #fffffffc;
+    background: #ff0000;
+}
+
+#creditCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+ #creditCardModal {
+    display: none;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    
+}
+
+#addcard {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    color: #c1c1c1;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 200px;
+    background: none;
+    transition: 0.5s ease;
+}
+
+.btnadd {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+#addcard:hover {
+    height: 35px;
+    width: 35px;
+    color: #ffffff;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 200px;
+    background: rgba(139, 139, 139, 0.137);
+}
+.modal {
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #141414;
+    z-index: 1000;
+    border-radius: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.modal button {
+    color: #ffffffa1;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 6px;
+    border-radius: 8px;
+    background: #00800078;
+    border: none;
+    transition: 0.6s linear;
+}
+
+.modal button:hover {
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 6px;
+    border-radius: 28px;
+    background: #008000;
+    border: none;
+}
+
+.modal input {
+    background: none;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 6px;
+    color: white;
+}
+select {
+    outline: 10px red;
+    box-shadow: none;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select {
+    position: relative;
+    display: flex;
+    width: 14em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+
+  select::after {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  select:hover::after {
+    color: #f39c12;
+  }
+
+  option {
+    color: black;
+  }
+
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
